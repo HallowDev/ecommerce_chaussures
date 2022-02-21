@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+{% extends 'admin/base.html.twig' %}
 
-<title>Category index</title>
+{% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <div class="container py-5">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>{{ category.image }}</td>
-                <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="row">
+            
+            {% include "_messages_flash.html.twig" %}
 
-    <a href="{{ path('category_new') }}">Create new</a>
+            <div class="col-12 d-flex align-items-center justify-content-between">
+                <h3>Liste des catégories</h3>
+                <a class="btn btn-primary" href="{{ path('admin_category_new') }}">Ajouter</a>
+            
+            </div>
+
+            {% for category in categories %}
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+
+                <div class="card">
+                    <img class="card-img-top imageCard" src="{{ category.Image }}" alt="image_category">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ category.name }}</h5>
+                        <a href="{{ path('admin_category_edit',{'id' : category.id }) }}" class="btn btn-primary w-100">Gérer</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
 {% endblock %}

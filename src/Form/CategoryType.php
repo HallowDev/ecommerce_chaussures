@@ -6,6 +6,7 @@ use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class CategoryType extends AbstractType
 {
@@ -19,7 +20,7 @@ class CategoryType extends AbstractType
                     'placeholder' => 'Ecrire ici le nom...'
                 ]
                 ])
-            ->add('imagePath',TextType::class,[
+            ->add('image',TextType::class,[
                 'label' => 'Image de la catégorie',
                 'required' => false,
                 'attr' => [
