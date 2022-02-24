@@ -8,12 +8,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminHomeController extends AbstractController
 {
-/**
- * @route("/admin/home", name= "admin_home")
- */
-public function home() : Response
-{
-    return $this->render("admin/home.html.twig");
-}
-
+    #[Route('/admin/home', name: 'admin_home')]
+    public function home() : Response
+    {
+        return $this->render("admin/home.html.twig");
+    }
 }

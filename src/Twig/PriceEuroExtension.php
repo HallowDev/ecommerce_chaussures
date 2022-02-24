@@ -11,16 +11,15 @@ class PriceEuroExtension extends AbstractExtension
     {
         return [
             new TwigFilter('priceEuro', [
-                $this, 'priceEuro'])
+                $this, 'priceEuro'
+            ])
         ];
     }
 
     public function priceEuro($value)
     {
         $finalValue = $value / 100;
-
         $finalValue = number_format($finalValue, 2, ',', ' ');
-
         return $finalValue . ' €';
     }
 }
