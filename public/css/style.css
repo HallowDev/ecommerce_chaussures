@@ -1,3 +1,7 @@
+html {
+    margin: 0;
+}
+
 .bg-primary {
     background-color: #875319 !important;
     color: white;
@@ -5,8 +9,7 @@
 
 footer {
     background-color: #875319;
-    bottom: 0;
-    position: absolute;
+    margin-top: 100%;
     width: 100%;
     text-align: center;
     padding: 10px;
@@ -26,4 +29,13 @@ footer a {
 
 footer a:hover {
     color: black;
+}
+
+.imageCard {
+    object-fit: cover;
+    height: 300px;
+}
+
+.cat {
+    margin: auto;
 }
