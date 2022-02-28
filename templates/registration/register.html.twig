@@ -1,17 +1,34 @@
-<!DOCTYPE html>
+{% extends 'customer/base.html.twig' %}
 
-<title>Register</title>
+{% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+<div class="container py-5">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <div class="row">
+    
+        <div class="col-12 ">
+            <a class="btn btn-secondary" href="{{ path('app_login') }}">Déja un compte ? Se connecter</a>
+        </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <div class="col-sm-12 mt-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Créer un compte</h5>
+                </div>
+                <div class="card-body">
+                    {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+
+                        <button type="submit" class="btn btn-primary mt-3">S'inscrire</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+
 {% endblock %}
