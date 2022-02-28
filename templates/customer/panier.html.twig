@@ -24,7 +24,7 @@
                                 <tr>
                                     <th>
                                         <div class="d-flex align-items-center">
-                                            <img src="{{ item.product.imagePath }}" alt="" style="height:80px;object-fit:contain;">
+                                            <img src="{{ item.product.image }}" alt="" style="height:80px;object-fit:contain;">
                                             <div class="d-flex flex-column align-items-center">
                                                 <p>{{ item.product.name }}</p>
                                                 <a class="btn btn-link text-danger" href="{{ path('cart_remove_product',{'id': item.product.id }) }}">Supprimer</a>
