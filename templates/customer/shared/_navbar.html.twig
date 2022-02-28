@@ -43,7 +43,16 @@
 
         {% endfor %}
 
-        </ul>
+      </ul>
+
+      <div class="d-flex">
+        <a class="nav-link text-white" aria-current="page" href="#">
+          Mon compte <i class="fas fa-user"></i>
+        </a>
+        <a class="nav-link text-white" aria-current="page" href="{{ path('cart_detail') }}">
+          Mon panier <i class="fas fa-shopping-bag"></i>
+        </a>
+      </div>
     </div>
-    </div>
+  </div>
 </nav>
