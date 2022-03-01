@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PurchaseRepository;
-use Symfony\Component\Validator\Constraints\DateTime;
 use symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PurchaseRepository::class)]
