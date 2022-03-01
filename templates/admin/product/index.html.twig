@@ -10,11 +10,11 @@
             {% include "_messages_flash.html.twig" %}
 
             <div class="col-12 d-flex align-items-center justify-content-between">
-<<<<<<< HEAD
+
                 <h3>Liste des catégories</h3>
-=======
+
                 <h3>Liste des produits</h3>
->>>>>>> product
+
                 <a class="btn btn-primary" href="{{ path('admin_product_new') }}">Ajouter</a>
             
             </div>
@@ -27,11 +27,11 @@
             <div class="col-sm-12 col-md-6 col-lg-4">
 
                 <div class="card">
-<<<<<<< HEAD
-                    <img class="card-img-top imageCard" src="{{ product.ImagePath }}" alt="image_product">
-=======
-                    <img class="card-img-top imageCard" src="{{ product.Image }}" alt="image_product">
->>>>>>> product
+
+                    <img class="card-img-top imageCard" src="{{ product.image }}" alt="image_product">
+
+                    <img class="card-img-top imageCard" src="{{ product.image }}" alt="image_product">
+
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p>{{ product.category.name}}</p>

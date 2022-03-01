@@ -2,8 +2,8 @@
 
 namespace App\Services\Cart;
 
-use App\Repository\ProductRepository;
 use App\Services\Cart\CartItem;
+use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class HandleCart
