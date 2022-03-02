@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\SizeRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
@@ -16,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProductController extends AbstractController
 {
     #[Route('/', name: 'admin_product_index', methods: ['GET'])]
-    public function index(ProductRepository $productRepository, PaginatorInterface $paginator, Request $request): Response
+    public function index(ProductRepository $productRepository, PaginatorInterface $paginator, Request $request, SizeRepository $id): Response
     {
             $products = $paginator->paginate(
             $productRepository->findAll(), /* query NOT result */
@@ -24,8 +25,12 @@ class ProductController extends AbstractController
             4 /*limit per page*/
         );
 
+        $sizes = $id->findAll();
+
+
         return $this->render('admin/product/index.html.twig', [
             'products' => $products,
+            'sizes' => $sizes,
         ]);
     }
 
@@ -86,3 +91,5 @@ class ProductController extends AbstractController
         return $this->redirectToRoute('admin_product_index', [], Response::HTTP_SEE_OTHER);
     }
 }
+
+

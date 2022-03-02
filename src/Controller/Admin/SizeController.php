@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('admin/size')]
+#[Route('/size')]
 class SizeController extends AbstractController
 {
     #[Route('/', name: 'admin_size_index', methods: ['GET'])]
@@ -22,7 +22,7 @@ class SizeController extends AbstractController
         ]);
     }
 
-    #[Route('admin/new', name: 'admin_size_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'admin_size_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $size = new Size();

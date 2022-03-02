@@ -10,15 +10,11 @@
             {% include "_messages_flash.html.twig" %}
 
             <div class="col-12 d-flex align-items-center justify-content-between">
-
-                <h3>Liste des catégories</h3>
-
                 <h3>Liste des produits</h3>
-
                 <a class="btn btn-primary" href="{{ path('admin_product_new') }}">Ajouter</a>
-            
             </div>
-            <div class="navigation mt-3">
+
+            <div class="navigation">
                 {{ knp_pagination_render(products) }}
             </div>
 
@@ -31,9 +27,12 @@
                     <img class="card-img-top imageCard" src="{{ product.image }}" alt="image_product">
 
                     <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p>{{ product.category.name}}</p>
+                        <h5 class="card-title">{{ product.name | upper}}</h5>
+                        <p class="mb-1">{{ product.category.name}}</p>
                         <p>{{ product.price | priceEuro }}</p>
+                        {% for size in sizes %}
+                            <p>{{ size.size }}</p>
+                        {% endfor %}
                         <a href="{{ path('admin_product_edit',{'id' : product.id }) }}" class="btn btn-primary w-100">Gérer</a>
                     </div>
                 </div>
@@ -41,7 +40,7 @@
             </div>
 
             {% endfor %}
-            <div class="navigation">
+            <div class="navigation mt-3">
                 {{ knp_pagination_render(products) }}
             </div>
 

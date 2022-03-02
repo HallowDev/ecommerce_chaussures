@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ProductRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\SizeRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Validator\Constraints\All;
@@ -11,10 +12,11 @@ use Symfony\Component\Validator\Constraints\All;
 class ProductController extends AbstractController
 {
     #[Route('boutique/categorie/{id}', name: 'boutique_product_show_by_category')]
-    public function showProductByCategory(int $id, CategoryRepository $categoryRepository)
+    public function showProductByCategory(int $id, CategoryRepository $categoryRepository, SizeRepository $sizeRepository)
     {
         $category = $categoryRepository->find($id);
         $categories = $categoryRepository->findAll();
+        $sizes = $sizeRepository->findAll();
 
         if(!$category)
         {
@@ -24,6 +26,7 @@ class ProductController extends AbstractController
         return $this->render("customer/product/show_by_category.html.twig",[
             'category' => $category,
             'categories' => $categories,
+            'sizes' => $sizes,
         ]);
     }
 
