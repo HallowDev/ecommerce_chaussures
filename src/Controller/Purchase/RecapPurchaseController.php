@@ -31,11 +31,11 @@ class RecapPurchaseController extends AbstractController
 
             $em->persist($purchase);
 
-            $listProduct = new ListProduct();
+            $lisProduct = new LisProduct();
 
-            $listProduct->setPurchase($purchase);
+            $lisProduct->setPurchase($purchase);
 
-            $em->persist($listProduct);
+            $em->persist($lisProduct);
 
             foreach($detailPanier as $item)
             {
@@ -43,7 +43,7 @@ class RecapPurchaseController extends AbstractController
 
                 $contentList->setProduct($item->getProduct());
                 $contentList->setQuantity($item->getQty());
-                $contentList->setListProduct($listProduct);
+                $contentList->setLisProduct($lisProduct);
 
                 $em->persist($contentList);
             }
