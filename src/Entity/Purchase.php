@@ -38,7 +38,7 @@ class Purchase
     #[ORM\Column(type: 'string', length: 255)]
     private $telephone;
 
-    #[ORM\OneToOne(mappedBy: 'purchase', targetEntity: LisProduct::class, cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'purchase', targetEntity: ListProduct::class, cascade: ['persist', 'remove'])]
     private $lisProduct;
 
     #[ORM\OneToOne(mappedBy: 'purchase', targetEntity: Invoice::class, cascade: ['persist', 'remove'])]
@@ -52,7 +52,7 @@ class Purchase
     {
         if(empty($this->createdAt))
         {
-            $this->createdAt = new DateTime();
+            $this->createAt = new DateTime();
         }
     }
 
@@ -145,19 +145,19 @@ class Purchase
         return $this;
     }
 
-    public function getLisProduct(): ?LisProduct
+    public function getListProduct(): ?ListProduct
     {
         return $this->lisProduct;
     }
 
-    public function setLisProduct(LisProduct $lisProduct): self
+    public function setListProduct(ListProduct $listProduct): self
     {
         // set the owning side of the relation if necessary
-        if ($lisProduct->getPurchase() !== $this) {
-            $lisProduct->setPurchase($this);
+        if ($listProduct->getPurchase() !== $this) {
+            $listProduct->setPurchase($this);
         }
 
-        $this->lisProduct = $lisProduct;
+        $this->listProduct = $listProduct;
 
         return $this;
     }

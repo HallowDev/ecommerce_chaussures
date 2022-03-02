@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\LisProduct;
+use App\Entity\ListProduct;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method LisProduct|null find($id, $lockMode = null, $lockVersion = null)
- * @method LisProduct|null findOneBy(array $criteria, array $orderBy = null)
- * @method LisProduct[]    findAll()
- * @method LisProduct[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ListProduct|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ListProduct|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ListProduct[]    findAll()
+ * @method ListProduct[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LisProductRepository extends ServiceEntityRepository
+class ListProductRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, LisProduct::class);
+        parent::__construct($registry, ListProduct::class);
     }
 
     // /**
-    //  * @return LisProduct[] Returns an array of LisProduct objects
+    //  * @return ListProduct[] Returns an array of ListProduct objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class LisProductRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?LisProduct
+    public function findOneBySomeField($value): ?ListProduct
     {
         return $this->createQueryBuilder('l')
             ->andWhere('l.exampleField = :val')
