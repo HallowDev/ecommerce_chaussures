@@ -10,7 +10,7 @@
             <div class="card">
     
                 <img 
-                {% if  (app.user.image is same as null) or (app.user.image is same as "") %}
+                {% if  (app.user.imagePath is same as null) or (app.user.imagePath is same as "") %}
                     src="https://images.unsplash.com/photo-1546561892-65bf811416b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"         
                 {% else %}
                  src="{{ app.user.imagePath }}"      
