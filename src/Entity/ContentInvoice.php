@@ -53,7 +53,7 @@ class ContentInvoice
 
     public function setProductName(string $productName): self
     {
-        $this->ProductName = $ProductName;
+        $this->productName = $productName;
 
         return $this;
     }

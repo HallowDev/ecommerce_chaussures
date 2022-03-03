@@ -40,7 +40,7 @@ class PaymentResultController extends AbstractController
         {
             $contentInvoice = new ContentInvoice();
 
-            $contentInvoice->setImageProduct($item->getProduct()->getImagePath());
+            $contentInvoice->setImageProduct($item->getProduct()->getImage());
             $contentInvoice->setInvoice($invoice);
             $contentInvoice->setPriceProduct($item->getProduct()->getPrice());
             $contentInvoice->setProductName($item->getProduct()->getName());

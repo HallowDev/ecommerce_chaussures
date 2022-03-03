@@ -44,7 +44,7 @@ class Purchase
     #[ORM\OneToOne(mappedBy: 'purchase', targetEntity: Invoice::class, cascade: ['persist', 'remove'])]
     private $invoice;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable:true)]
     private $numero;
 
     #[ORM\PrePersist]
@@ -184,7 +184,7 @@ class Purchase
         return $this->numero;
     }
 
-    public function setNumero(string $numero): self
+    public function setNumero(?string $numero): self
     {
         $this->numero = $numero;
 
