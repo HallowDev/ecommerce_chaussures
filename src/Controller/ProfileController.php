@@ -99,26 +99,26 @@ class ProfileController extends AbstractController
                 EntityManagerInterface $em,UserPasswordHasherInterface $userPasswordHasher)
     {
            /** @var User $user */
-           $user = $this->getUser();
+            $user = $this->getUser();
 
-           $formPassword = $this->createForm(EditAccountPasswordType::class);
-   
-           $formPassword->handleRequest($request);
-   
-           if($formPassword->isSubmitted() && $formPassword->isValid())
-           {
+            $formPassword = $this->createForm(EditAccountPasswordType::class);
+
+            $formPassword->handleRequest($request);
+
+            if($formPassword->isSubmitted() && $formPassword->isValid())
+            {
                // encode the plain password
-               $user->setPassword(
-                   $userPasswordHasher->hashPassword(
-                       $user,
-                       $formPassword->get('plainPassword')->getData()
-                   )
-               );
-   
-               $em->flush();
-   
-               $this->addFlash("success","Votre mot de passe a bien été modifié.");
-               return $this->redirectToRoute("profile_detail");
+                $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                        $user,
+                        $formPassword->get('plainPassword')->getData()
+                    )
+                );
+
+                $em->flush();
+
+                $this->addFlash("success","Votre mot de passe a bien été modifié.");
+                return $this->redirectToRoute("profile_detail");
             }
 
             return $this->render("customer/profile/edit_password.html.twig",[
