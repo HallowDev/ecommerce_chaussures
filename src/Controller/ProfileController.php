@@ -3,6 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\User;
+<<<<<<< HEAD
+=======
+use App\Form\EditInfoType;
+>>>>>>> 2cd3a98d2b1dfff226ffa205eb96a293398feb4a
 use App\Form\UploadImageType;
 use App\Form\ContactSupportType;
 use App\Form\EditAccountPasswordType;
@@ -150,9 +154,33 @@ class ProfileController extends AbstractController
         return $this->render("customer/profile/contact_support.html.twig",[
             'form' => $form->createView(),
         ]);
+    }
 
+    #[Route('/profile/edit/info', name: 'profile_edit_info')]
+    public function changeInfo(Request $request,EntityManagerInterface $em)
+    {
+        /** @var User $user */
+        $user = $this->getUser();
+
+        $form = $this->createForm(EditInfoType::class, $user);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $em->persist($user);
+            $em->flush();
+
+        $this->addFlash("success","Vos informations ont bien été modifiées.");
+        return $this->redirectToRoute("profile_detail");
+        }
+
+        return $this->render("customer/profile/edit_info.html.twig",[
+        'form' => $form->createView(),
+        ]);
 
     }
+
+
 }
 
-?>
