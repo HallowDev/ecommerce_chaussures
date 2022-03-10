@@ -1,20 +1,51 @@
+@font-face {
+    font-family: 'Amatic';
+    src: url('fonts/amaticsc-regular.woff') format('woff'),
+        url('fonts/amaticsc-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'ChunkFive';
+    src: url('fonts/chunkfive-regular.woff') format('woff'),
+        url('fonts/chunkfive-regular.woff2') format('woff2');
+}
+
 html {
     margin: 0;
 }
 
-.bg-primary {
-    background-color: #875319 !important;
+body {
+    font-family: 'ChunkFive' !important;
+}
+
+.navbar {
+    background-color: #714d24 !important;
     color: white;
 }
 
+.navbar a {
+    color: white;
+    font-size: 30px;
+}
+
+.navbar a:hover {
+    color: #3f280d;
+}
+
 footer {
-    background-color: #875319;
-    margin-top: 100%;
-    width: 100%;
+    background-color: #c18746;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+.bg-secondary {
+    background-color: #c18746 !important;
+}
+
+.newProducts {
+    background-color: #714d24;
 }
 
 .imageCarousel {
@@ -24,11 +55,11 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 footer a:hover {
-    color: black;
+    color: #3f280d;
 }
 
 .imageCard {
@@ -39,3 +70,11 @@ footer a:hover {
 .cat {
     margin: auto;
 }
+
+.btn-primary {
+    background-color: #3f280d;
+}
+
+h3 {
+    color: white;
+} 
