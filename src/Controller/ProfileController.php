@@ -3,10 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
-<<<<<<< HEAD
-=======
+
 use App\Form\EditInfoType;
->>>>>>> 2cd3a98d2b1dfff226ffa205eb96a293398feb4a
 use App\Form\UploadImageType;
 use App\Form\ContactSupportType;
 use App\Form\EditAccountPasswordType;
