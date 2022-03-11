@@ -15,23 +15,23 @@ class PurchaseType extends AbstractType
         $builder
             ->add('country',TextType::class,[
                 'label' => 'Pays',
-                'required' => false
+                'required' => true
             ])
             ->add('city',TextType::class,[
                 'label' => 'Ville',
-                'required' => false
+                'required' => true
             ])
             ->add('street',TextType::class,[
                 'label' => 'Rue et numéro',
-                'required' => false
+                'required' => true
             ])
             ->add('postalCode',TextType::class,[
                 'label' => 'Code postal',
-                'required' => false
+                'required' => true
             ])
             ->add('telephone',TextType::class,[
                 'label' => 'Téléphone',
-                'required' => false
+                'required' => true
             ])
         ;
     }
