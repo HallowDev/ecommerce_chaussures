@@ -2,18 +2,19 @@
 
 namespace App\Controller\Purchase;
 
-use App\Entity\ContentInvoice;
 use App\Entity\Invoice;
-use App\Repository\PurchaseRepository;
+use App\Entity\ContentInvoice;
 use App\Services\Cart\HandleCart;
+use App\Repository\PurchaseRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PaymentResultController extends AbstractController
 {
     #[Route('/boutique/paiement/success', name: 'boutique_payment_success')]
-    public function success( PurchaseRepository $purchaseRepository,HandleCart $handleCart,EntityManagerInterface $em)
+    public function success( PurchaseRepository $purchaseRepository,HandleCart $handleCart,EntityManagerInterface $em, Request $request)
     {
         $user = $this->getUser();
 
@@ -27,6 +28,8 @@ class PaymentResultController extends AbstractController
         );
 
         $invoice = new Invoice();
+
+
 
         $invoice->setPurchase($purchase);
         $invoice->setIsPayed(1);

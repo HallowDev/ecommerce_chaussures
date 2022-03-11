@@ -34,9 +34,9 @@
                                     </th>
                                     <td>{{ item.product.price | priceEuro }}</td>
                                     <td>
-                                        <a class="btn btn-dark" href="{{ path('cart_decrement_product',{'id' : item.product.id }) }}"><i class="fas fa-minus-circle"></i></a>
+                                        <a class="btn btn-primary" href="{{ path('cart_decrement_product',{'id' : item.product.id }) }}"><i class="fas fa-minus-circle"></i></a>
                                         <button class="btn btn-light"> {{ item.qty }}</button>
-                                        <a class="btn btn-dark" href="{{ path('cart_add',{'id' : item.product.id }) }}?routeToRedirect=panier"><i class="fas fa-plus-circle"></i></a>
+                                        <a class="btn btn-primary" href="{{ path('cart_add',{'id' : item.product.id }) }}?routeToRedirect=panier"><i class="fas fa-plus-circle"></i></a>
                                     </td>
                                     <td>{{ item.total | priceEuro }}</td>
                                 </tr>

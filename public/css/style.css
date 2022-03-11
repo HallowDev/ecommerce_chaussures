@@ -12,10 +12,14 @@
 
 html {
     margin: 0;
+    height: 100%;
 }
 
 body {
     font-family: 'ChunkFive' !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
@@ -25,7 +29,11 @@ body {
 
 .navbar a {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
+}
+
+.navbar a:visited {
+    color: white;
 }
 
 .navbar a:hover {
@@ -38,6 +46,8 @@ footer {
     padding: 20px;
     text-decoration: none;
     color: white;
+    margin-top: auto;
+    width: 100%;
 }
 
 .bg-secondary {
@@ -49,7 +59,7 @@ footer {
 }
 
 .imageCarousel {
-    height: 600px;
+    height: 800px;
     object-fit: cover;
 }
 
@@ -73,8 +83,26 @@ footer a:hover {
 
 .btn-primary {
     background-color: #3f280d;
+    border-color: #3f280d;
 }
 
 h3 {
     color: white;
-} 
+}
+
+.btn-secondary {
+    background-color: #3f280d;
+}
+
+.btn-primary:visited {
+    background-color: #3f280d;
+}
+
+.btn-primary:hover {
+    background-color: #c18746;
+    border-color: #c18746;
+}
+
+.btn-primary:focus {
+    box-shadow: none !important;
+}
